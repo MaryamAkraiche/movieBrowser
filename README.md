@@ -13,7 +13,7 @@ Movie Browser is a web application for discovering movies. Built with React, thi
 
 Here’s a glimpse of what you can expect from Movie Browser:
 
-![Screenshot1](movieBrowser/MB-README.png)
+![Screenshot1]([movieBrowser/MB-README.png](https://github.com/MaryamAkraiche/movieBrowser/blob/development/MB-README.png?raw=true))
 
 ## 🛠️ Technologies Used
 
