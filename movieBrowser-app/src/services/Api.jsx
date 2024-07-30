@@ -1,11 +1,9 @@
-import 'dotenv/config'
-
-const API_KEY = process.env.API_KEY
-const BASE_URL = process.env.BASE_URL
+const VITE_API_KEY = import.meta.env.VITE_API_KEY
+const VITE_BASE_URL = import.meta.env.VITE_BASE_URL
 
 export const getTrendingMovies = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`);
+    const response = await fetch(`${VITE_BASE_URL}/trending/movie/week?api_key=${VITE_API_KEY}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -19,7 +17,7 @@ export const getTrendingMovies = async () => {
 
 export const fetchGenres = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}`);
+    const response = await fetch(`${VITE_BASE_URL}/genre/movie/list?api_key=${VITE_API_KEY}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -34,7 +32,7 @@ export const fetchGenres = async () => {
 export const fetchMoviesByGenres = async (selectedGenres) => {
   try {
     const genreIds = selectedGenres.join(',');
-    const response = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genreIds}`);
+    const response = await fetch(`${VITE_BASE_URL}/discover/movie?api_key=${VITE_API_KEY}&with_genres=${genreIds}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -48,7 +46,7 @@ export const fetchMoviesByGenres = async (selectedGenres) => {
 
 export const searchMoviesByName = async (query) => {
   try {
-    const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}`);
+    const response = await fetch(`${VITE_BASE_URL}/search/movie?api_key=${VITE_API_KEY}&query=${encodeURIComponent(query)}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -62,7 +60,7 @@ export const searchMoviesByName = async (query) => {
 
 export const getMovieDetails = async (movieId) => {
   try {
-    const response = await fetch(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`);
+    const response = await fetch(`${VITE_BASE_URL}/movie/${movieId}?api_key=${VITE_API_KEY}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -76,7 +74,7 @@ export const getMovieDetails = async (movieId) => {
 
 export const getSimilarMovies = async (movieId) => {
   try {
-    const response = await fetch(`${BASE_URL}/movie/${movieId}/similar?api_key=${API_KEY}`);
+    const response = await fetch(`${VITE_BASE_URL}/movie/${movieId}/similar?api_key=${VITE_API_KEY}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
