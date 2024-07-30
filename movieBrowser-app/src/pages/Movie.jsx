@@ -40,7 +40,7 @@ function Movie() {
   return (
     <div>
       <img
-        className="rounded-lg shadow-lg w-full max-h-96"
+        className="shadow-lg w-full h-96 object-cover md:w-fit"
         src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
         alt={movieDetails.title}
       />
@@ -70,7 +70,7 @@ function Movie() {
           {similarMovies.map(movie => (
             <div key={movie.id} className="h-auto mb-36 flex-shrink-0 rounded-lg shadow-lg overflow-hidden snap-center">
               <img
-                className="w-52 rounded-lg shadow-lg"
+                className="w-52 rounded-3xl shadow-lg object-cover"
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
               />
