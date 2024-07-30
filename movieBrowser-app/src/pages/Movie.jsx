@@ -1,5 +1,3 @@
-// Movie.jsx
-
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieDetails, getSimilarMovies } from '../services/Api';
@@ -42,7 +40,7 @@ function Movie() {
   return (
     <div>
       <img
-        className="rounded-lg shadow-lg"
+        className="rounded-lg shadow-lg w-full max-h-96"
         src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
         alt={movieDetails.title}
       />
